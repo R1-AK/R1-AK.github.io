@@ -361,13 +361,13 @@
         /* About Section */
         .about-wrapper {
             display: flex;
-            flex-wrap: wrap;
+            position: relative;
         }
         
         .about-img {
-            float: left;
             width: 250px;
-            margin: 0 30px 15px 0;
+            margin-right: 30px;
+            flex-shrink: 0;
         }
         
         .about-img img {
@@ -378,7 +378,6 @@
         
         .about-text-full {
             flex: 1;
-            min-width: 300px;
         }
         
         .about-text-full p,
@@ -387,13 +386,15 @@
             line-height: 1.6;
         }
         
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .about-wrapper {
+                flex-direction: column;
+            }
+            
             .about-img {
-                float: none;
                 width: 80%;
                 max-width: 250px;
                 margin: 0 auto 20px;
-                display: block;
             }
         }
         
@@ -690,6 +691,8 @@
         // Single Page Navigation
         const sections = document.querySelectorAll('section');
         const navItems = document.querySelectorAll('.nav-link');
+        const logoElement = document.querySelector('.logo');
+        const originalLogoText = logoElement.textContent;
         
         navItems.forEach(item => {
             item.addEventListener('click', function(e) {
@@ -707,6 +710,15 @@
                 // Show the target section
                 const targetId = this.getAttribute('href').substring(1);
                 document.getElementById(targetId).classList.add('active');
+                
+                // Hide or show intro based on section
+                if (targetId === 'home') {
+                    // Restore original logo
+                    logoElement.textContent = originalLogoText;
+                } else {
+                    // Change logo to reflect current section
+                    logoElement.textContent = this.textContent.toUpperCase();
+                }
                 
                 // Special handling for scrolling - only scroll to top on Portfolio and About
                 if (targetId !== 'home') {
