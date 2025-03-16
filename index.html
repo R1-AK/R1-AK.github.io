@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+        /* Portfolio Section */
+        #portfolio {
+            padding-top: 30px;
+        }
+        
+        /* About Section */
+        #about {
+            padding-top: 30px;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -104,19 +112,18 @@
         
         .home-container {
             position: relative;
-            height: 100vh;
+            min-height: 50vh;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .hero {
             max-width: 800px;
             margin: 0 auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             width: 100%;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
         
         .hero h1 {
@@ -141,12 +148,12 @@
         /* Research Areas */
         .research-areas {
             width: 100%;
-            margin-top: 100vh;
-            padding: 60px 0;
+            padding: 20px 0 40px;
+            background-color: #f5f5f5;
         }
         
         .research-areas h2 {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: #333;
             font-size: 2.2rem;
         }
@@ -355,7 +362,6 @@
         .about-wrapper {
             display: flex;
             flex-wrap: wrap;
-            position: relative;
         }
         
         .about-img {
@@ -370,19 +376,13 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
-        .about-text {
-            flex: 1;
-            min-width: 250px;
-        }
-        
         .about-text-full {
-            width: 100%;
-            clear: both;
-            margin-top: 20px;
+            flex: 1;
+            min-width: 300px;
         }
         
-        .about-text p,
-        .about-text-full p {
+        .about-text-full p,
+        .about-text-full ul {
             margin-bottom: 15px;
             line-height: 1.6;
         }
@@ -646,13 +646,11 @@
                 <div class="about-img">
                     <img src="images/profile.png" alt="Riska Aprilia Kuswati">
                 </div>
-                <div class="about-text">
+                <div class="about-text-full">
                     <p>Riska Aprilia Kuswati is a geospatial researcher specializing in climate change, energy transition, and natural capital. Holding an MSc in Geospatial Sciences (Hydrographic Surveying) with distinction from University College London, she brings over 5 years of experience as a geospatial consultant, contributing to numerous mining and construction projects across Indonesia.</p>
                     
                     <p>Her current research addresses global environmental challenges, with a focus on mining impact assessment and mitigation for energy transition, while incorporating AI and machine learning to enhance geospatial analysis.</p>
-                </div>
-                
-                <div class="about-text-full">
+                    
                     <p>Riska has been recognized through awards such as the Energy Source Prize 2023 (shared with a colleague) at the University of Glasgow and the Most Visionary Research award (on behalf of the lab) at the Indonesia International Sustainability Forum (IISF) 2024.</p>
                     
                     <p>She is actively working to publish her research in high-impact journals and has technical expertise in:</p>
@@ -710,11 +708,14 @@
                 const targetId = this.getAttribute('href').substring(1);
                 document.getElementById(targetId).classList.add('active');
                 
+                // Special handling for scrolling - only scroll to top on Portfolio and About
+                if (targetId !== 'home') {
+                    // For Portfolio and About, scroll to top
+                    window.scrollTo(0, 0);
+                }
+                
                 // Close mobile menu if open
                 navLinks.classList.remove('active');
-                
-                // Scroll to top
-                window.scrollTo(0, 0);
             });
         });
         
