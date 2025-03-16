@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://riskaprilia.github.io/sitemap.xml
