@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: #0088cc;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            min-height: 100vh;
+            display: none;
+        }
+        
+        section.active {
+            display: block;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #0088cc;
+        }
+        
+        /* Home Section */
+        #home {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+        
+        .hero {
+            max-width: 800px;
+            margin-bottom: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #0088cc;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        /* Research Areas */
+        .research-areas {
+            width: 100%;
+            margin-top: 30px;
+            padding: 30px 0;
+        }
+        
+        .research-areas h2 {
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2.2rem;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .research-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        
+        .research-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .research-item h3 {
+            color: #333;
+            font-size: 1.5rem;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .research-img {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .research-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .research-item:hover .research-img img {
+            transform: scale(1.05);
+        }
+        
+        .research-item p {
+            padding: 20px;
+            margin: 0;
+            line-height: 1.6;
+            color: #555;
+            flex-grow: 1;
+            text-align: center;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin: 10px auto 0;
+            padding: 8px 20px;
+            color: #0088cc;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid #0088cc;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .read-more:hover {
+            background: #0088cc;
+            color: #fff;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #006699;
+        }
+        
+        /* Carousel Styles */
+        .carousel-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .carousel-section {
+            display: none;
+            margin-bottom: 60px;
+        }
+        
+        .carousel-section.active {
+            display: block;
+        }
+        
+        .category-description {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .category-description h3 {
+            color: #0088cc;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .category-description p {
+            color: #555;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+        
+        .carousel-inner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        
+        .carousel-item.active {
+            opacity: 1;
+        }
+        
+        .carousel-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+        }
+        
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(0,0,0,0.3);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        
+        .carousel-control:hover {
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
+        /* About Section */
+        .about-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        
+        .about-img {
+            float: left;
+            width: 250px;
+            margin: 0 30px 15px 0;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .about-text-full {
+            width: 100%;
+            clear: both;
+            margin-top: 20px;
+        }
+        
+        .about-text p,
+        .about-text-full p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 600px) {
+            .about-img {
+                float: none;
+                width: 80%;
+                max-width: 250px;
+                margin: 0 auto 20px;
+                display: block;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #0088cc;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">RISKA KUSWATI</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+                <div class="menu-toggle">&#9776;</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="active">
+        <div class="container">
+            <div class="hero">
+                <h1>Riska Aprilia Kuswati</h1>
+                <p class="subtitle">Geospatial Researcher & Consultant</p>
+                <p>Specializing in climate change, energy transition, and natural capital through advanced geospatial techniques.</p>
+                <a href="#portfolio" class="cta-button">View My Work</a>
+            </div>
+            
+            <div class="research-areas">
+                <h2>Research Focus Areas</h2>
+                <div class="research-grid">
+                    <!-- Climate Change Area -->
+                    <div class="research-item">
+                        <h3>Climate Change</h3>
+                        <div class="research-img">
+                            <img src="images/climatechange.jpg" alt="Climate Change Research">
+                        </div>
+                        <p>Advancing earth modeling to assess climate impacts, enhance resilience, and support data-driven adaptation strategies</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                    
+                    <!-- Energy Transition Area -->
+                    <div class="research-item">
+                        <h3>Energy Transition</h3>
+                        <div class="research-img">
+                            <img src="images/energytransition.jpg" alt="Energy Transition Research">
+                        </div>
+                        <p>Supporting a just energy transition in developing countries by integrating geospatial analysis with equitable policy solutions</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                    
+                    <!-- Natural Capital Area -->
+                    <div class="research-item">
+                        <h3>Natural Capital</h3>
+                        <div class="research-img">
+                            <img src="images/naturalcapital.jpg" alt="Natural Capital Research">
+                        </div>
+                        <p>Unlocking social justice through geospatial science to value ecosystem services and drive sustainable decision-making</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>My Portfolio</h2>
+            
+            <!-- Portfolio Categories Navigation -->
+            <div class="portfolio-categories" style="margin-bottom: 40px; text-align: center;">
+                <button class="category-btn active" data-category="gis" style="background: #0088cc; color: white; border: none; padding: 10px 20px; margin: 0 5px 10px; border-radius: 4px; cursor: pointer; font-weight: 500;">GIS</button>
+                <button class="category-btn" data-category="remote-sensing" style="background: #f5f5f5; color: #333; border: none; padding: 10px 20px; margin: 0 5px 10px; border-radius: 4px; cursor: pointer; font-weight: 500;">Remote Sensing</button>
+                <button class="category-btn" data-category="geodesy" style="background: #f5f5f5; color: #333; border: none; padding: 10px 20px; margin: 0 5px 10px; border-radius: 4px; cursor: pointer; font-weight: 500;">Geodesy</button>
+            </div>
+            
+            <!-- Carousel Containers -->
+            <div class="carousel-container">
+                <!-- GIS Carousel -->
+                <div class="carousel-section active" id="gis-carousel">
+                    <div class="category-description">
+                        <h3>Geographic Information Systems (GIS)</h3>
+                        <p>My GIS portfolio showcases projects involving spatial data analysis, mapping, and geographic visualization solutions.</p>
+                    </div>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/GIS1.jpg" alt="GIS Spatial Analysis" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Spatial pattern analysis for environmental impact assessment</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/GIS2.jpg" alt="GIS Dashboard" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Interactive GIS dashboard for city planning</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control prev">&#10094;</button>
+                        <button class="carousel-control next">&#10095;</button>
+                    </div>
+                </div>
+                
+                <!-- Remote Sensing Carousel -->
+                <div class="carousel-section" id="remote-sensing-carousel">
+                    <div class="category-description">
+                        <h3>Remote Sensing</h3>
+                        <p>My remote sensing work focuses on satellite imagery analysis, spectral processing, and earth observation applications.</p>
+                    </div>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/RS1.png" alt="Satellite Imagery Analysis" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Multi-temporal satellite imagery for land cover change detection</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/RS2.png" alt="Spectral Analysis" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Spectral signature analysis for vegetation health monitoring</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/RS3.png" alt="LiDAR Processing" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>LiDAR point cloud processing for 3D terrain modeling</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control prev">&#10094;</button>
+                        <button class="carousel-control next">&#10095;</button>
+                    </div>
+                </div>
+                
+                <!-- Geodesy Carousel -->
+                <div class="carousel-section" id="geodesy-carousel">
+                    <div class="category-description">
+                        <h3>Geodesy</h3>
+                        <p>My geodesy portfolio demonstrates expertise in precise positioning, reference frame establishment, and geospatial measurements.</p>
+                    </div>
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/GEODESY1.jpg" alt="GNSS Network" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>GNSS network design for high-precision positioning</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/GEODESY2.jpg" alt="Geoid Model" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Regional geoid model development for height system unification</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/GEODESY3.jpg" alt="Deformation Monitoring" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Crustal deformation monitoring using integrated geodetic techniques</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/GEODESY4.jpg" alt="Geodesy Analysis" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Advanced geodetic analysis for infrastructure monitoring</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/GEODESY5.jpg" alt="Reference Frame" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Reference frame establishment for national mapping projects</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/GEODESY6.jpg" alt="Geodetic Network" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <p>Geodetic network optimization for critical infrastructure</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control prev">&#10094;</button>
+                        <button class="carousel-control next">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-wrapper">
+                <div class="about-img">
+                    <img src="images/profile.png" alt="Riska Aprilia Kuswati">
+                </div>
+                <div class="about-text">
+                    <p>Riska Aprilia Kuswati is a geospatial researcher specializing in climate change, energy transition, and natural capital. Holding an MSc in Geospatial Sciences (Hydrographic Surveying) with distinction from University College London, she brings over 5 years of experience as a geospatial consultant, contributing to numerous mining and construction projects across Indonesia.</p>
+                    
+                    <p>Her current research addresses global environmental challenges, with a focus on mining impact assessment and mitigation for energy transition, while incorporating AI and machine learning to enhance geospatial analysis.</p>
+                </div>
+                
+                <div class="about-text-full">
+                    <p>Riska has been recognized through awards such as the Energy Source Prize 2023 (shared with a colleague) at the University of Glasgow and the Most Visionary Research award (on behalf of the lab) at the Indonesia International Sustainability Forum (IISF) 2024.</p>
+                    
+                    <p>She is actively working to publish her research in high-impact journals and has technical expertise in:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 20px;">
+                        <li>GIS: ArcGIS, QGIS</li>
+                        <li>Remote Sensing: Agisoft Metashape, ENVI, Global Mapper</li>
+                        <li>Programming: Python, R, Google Earth Engine</li>
+                        <li>Geodesy: GNSS, earth modeling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <!-- Add your social media links here -->
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="Instagram">ig</a>
+                <a href="#" title="Twitter">tw</a>
+            </div>
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Single Page Navigation
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-link');
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all nav items
+                navItems.forEach(link => link.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Hide all sections
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Show the target section
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).classList.add('active');
+                
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Portfolio Category Filtering and Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const carouselSections = document.querySelectorAll('.carousel-section');
+            
+            // Category switching
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.style.background = '#f5f5f5';
+                        btn.style.color = '#333';
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    this.style.background = '#0088cc';
+                    this.style.color = 'white';
+                    
+                    // Hide all carousel sections
+                    carouselSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Show the selected carousel section
+                    const category = this.getAttribute('data-category');
+                    document.getElementById(category + '-carousel').classList.add('active');
+                });
+            });
+            
+            // Initialize all carousels
+            carouselSections.forEach(section => {
+                initCarousel(section);
+            });
+            
+            function initCarousel(carouselSection) {
+                const items = carouselSection.querySelectorAll('.carousel-item');
+                const prevBtn = carouselSection.querySelector('.prev');
+                const nextBtn = carouselSection.querySelector('.next');
+                let currentIndex = 0;
+                
+                // Show first slide
+                items[0].classList.add('active');
+                
+                // Previous button
+                prevBtn.addEventListener('click', () => {
+                    items[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                    items[currentIndex].classList.add('active');
+                });
+                
+                // Next button
+                nextBtn.addEventListener('click', () => {
+                    items[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % items.length;
+                    items[currentIndex].classList.add('active');
+                });
+                
+                // Auto slide (optional - uncomment to enable)
+                /*
+                setInterval(() => {
+                    items[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % items.length;
+                    items[currentIndex].classList.add('active');
+                }, 5000); // Change slide every 5 seconds
+                */
+            }
+        });
+    </script>
+</body>
+</html>
