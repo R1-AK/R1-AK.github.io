@@ -1,50 +1,115 @@
-/* Blog Preview Styles */
-.blog-previews {
-    margin-top: 20px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riska Aprilia Kuswati | Geospatial Researcher & Consultant</title>
+    <meta name="description" content="Riska Aprilia Kuswati is a geospatial researcher specializing in climate change, energy transition, and natural capital with expertise in GIS, remote sensing, and geodesy.">
+    <meta name="keywords" content="Riska Aprilia Kuswati, Riska Kuswati, geospatial researcher, GIS, remote sensing, geodesy, climate change, energy transition, natural capital">
+    <meta name="author" content="Riska Aprilia Kuswati">
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="Riska Aprilia Kuswati | Geospatial Researcher">
+    <meta property="og:description" content="Geospatial researcher specializing in climate change, energy transition, and natural capital">
+    <meta property="og:image" content="images/profile.png">
+    <meta property="og:url" content="https://r1-ak.github.io">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">RISKA KUSWATI</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                </ul>
+                <div class="menu-toggle">&#9776;</div>
+            </nav>
+        </div>
+    </header>
 
-.blog-preview-card {
-    background-color: #f9f9f9;
-    border-left: 3px solid #0088cc;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 0 4px 4px 0;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
+    <!-- Home Section -->
+    <section id="home" class="active">
+        <div class="container home-container">
+            <div class="hero">
+                <h1>Riska Aprilia Kuswati</h1>
+                <p class="subtitle">Geospatial Researcher & Consultant</p>
+                <p>Specializing in climate change, energy transition, and natural capital through advanced geospatial techniques.</p>
+                <a href="portfolio.html" class="cta-button">View My Work</a>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="research-areas">
+                <h2>Research Focus Areas</h2>
+                <div class="research-grid">
+                    <!-- Climate Change Area -->
+                    <div class="research-item">
+                        <h3>Climate Change</h3>
+                        <div class="research-img">
+                            <img src="images/climatechange.jpg" alt="Climate Change Research">
+                        </div>
+                        <p>Advancing earth modeling to assess climate impacts, enhance resilience, and support data-driven adaptation strategies</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                    
+                    <!-- Energy Transition Area -->
+                    <div class="research-item">
+                        <h3>Energy Transition</h3>
+                        <div class="research-img">
+                            <img src="images/energytransition.jpg" alt="Energy Transition Research">
+                        </div>
+                        <p>Supporting a just energy transition in developing countries by integrating geospatial analysis with equitable policy solutions</p>
+                        
+                        <!-- Blog Posts Preview -->
+                        <div class="blog-previews">
+                            <div class="blog-preview-card">
+                                <h4>From Fossil Fuels to Fair Futures</h4>
+                                <p class="blog-date">March 17, 2025</p>
+                                <p class="blog-excerpt">As the world races to transition from fossil fuels to clean energy, this transition risks perpetuating deep spatial injustices—especially in resource-rich regions of Indonesia...</p>
+                                <a href="energy-transition-blog.html" class="read-more">Read Full Article</a>
+                            </div>
+                            <!-- Add more blog preview cards here in the future -->
+                        </div>
+                    </div>
+                    
+                    <!-- Natural Capital Area -->
+                    <div class="research-item">
+                        <h3>Natural Capital</h3>
+                        <div class="research-img">
+                            <img src="images/naturalcapital.jpg" alt="Natural Capital Research">
+                        </div>
+                        <p>Unlocking social justice through geospatial science to value ecosystem services and drive sustainable decision-making</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.blog-preview-card:hover {
-    transform: translateX(5px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <!-- Add your social media links here -->
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="Instagram">ig</a>
+                <a href="#" title="Twitter">tw</a>
+            </div>
+            <p>&copy; 2025 Riska Aprilia Kuswati. All rights reserved.</p>
+        </div>
+    </footer>
 
-.blog-preview-card h4 {
-    margin: 0 0 5px 0;
-    color: #333;
-    font-size: 1.1rem;
-}
-
-.blog-date {
-    color: #777;
-    font-size: 0.8rem;
-    margin: 0 0 8px 0;
-}
-
-.blog-excerpt {
-    margin: 0 0 10px 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #555;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* When you have multiple blog posts */
-.all-blogs-link {
-    display: block;
-    margin-top: 15px;
-    text-align: right;
-    font-size: 0.9rem;
-}
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
