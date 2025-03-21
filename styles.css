@@ -1,3 +1,478 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #0088cc;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Section Styles */
+section {
+    display: block;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #0088cc;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background-color: #0088cc;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #006699;
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.home-container {
+    position: relative;
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: #0088cc;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Research Areas */
+.research-areas {
+    width: 100%;
+    padding: 20px 0 40px;
+    background-color: #f5f5f5;
+}
+
+.research-areas h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2.2rem;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.research-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.research-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.research-item h3 {
+    color: #333;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+.research-img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.research-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.research-item:hover .research-img img {
+    transform: scale(1.05);
+}
+
+.research-item p {
+    padding: 20px;
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.read-more {
+    display: inline-block;
+    margin: 10px auto 0;
+    padding: 8px 20px;
+    color: #0088cc;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #0088cc;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.read-more:hover {
+    background: #0088cc;
+    color: #fff;
+}
+
+/* Portfolio Categories */
+.portfolio-categories {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.category-btn {
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.category-btn.active {
+    background: #0088cc;
+    color: white;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-section {
+    display: none;
+    margin-bottom: 60px;
+}
+
+.carousel-section.active {
+    display: block;
+}
+
+.category-description {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-description h3 {
+    color: #0088cc;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.category-description p {
+    color: #555;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.carousel-control:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* About Section */
+.about-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.about-img {
+    width: 250px;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.about-text-full {
+    flex: 1;
+}
+
+.about-text-full p,
+.about-text-full ul {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.about-text-full ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Latest Blog Posts Section */
+.latest-blogs {
+    width: 100%;
+    padding: 40px 0 60px;
+    background-color: #fff;
+}
+
+.latest-blogs h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.blog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.blog-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #0088cc;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.blog-item h3 {
+    padding: 20px 20px 10px;
+    margin: 0;
+    color: #333;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    transition: color 0.3s;
+    text-align: left;
+}
+
+.blog-item:hover h3 {
+    color: #0088cc;
+}
+
+.blog-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
 .blog-item:hover .blog-img img {
     transform: scale(1.05);
 }
