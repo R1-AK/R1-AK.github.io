@@ -3,13 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Riska Aprilia Kuswati</title>
-    <meta name="description" content="Explore Riska Aprilia Kuswati's portfolio of geospatial projects in GIS, remote sensing, and geodesy for environmental and climate applications.">
-    <meta name="keywords" content="Riska Aprilia Kuswati, Riska Kuswati, portfolio, GIS projects, remote sensing projects, geodesy research">
-    <meta name="author" content="Riska Aprilia Kuswati">
-    <meta property="og:title" content="Riska Kuswati's Portfolio">
-    <meta property="og:description" content="Explore my geospatial projects in GIS, remote sensing, and geodesy">
-    <meta property="og:url" content="https://r1-ak.github.io/portfolio.html">
+    <title>Riska Aprilia Kuswati - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -32,128 +26,99 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="active">
         <div class="container">
-            <h2>My Portfolio</h2>
-            
-            <!-- Portfolio Categories Navigation -->
+            <h2>Portfolio</h2>
             <div class="portfolio-categories">
-                <button class="category-btn active" data-category="gis">GIS</button>
-                <button class="category-btn" data-category="remote-sensing">Remote Sensing</button>
-                <button class="category-btn" data-category="geodesy">Geodesy</button>
+                <button class="category-btn active" data-category="climate">Climate Change</button>
+                <button class="category-btn" data-category="energy">Energy Transition</button>
+                <button class="category-btn" data-category="capital">Natural Capital</button>
             </div>
             
-            <!-- Carousel Containers -->
-            <div class="carousel-container">
-                <!-- GIS Carousel -->
-                <div class="carousel-section active" id="gis-carousel">
-                    <div class="category-description">
-                        <h3>Geographic Information Systems (GIS)</h3>
-                        <p>My GIS portfolio showcases projects involving spatial data analysis, mapping, and geographic visualization solutions. I specialize in using ArcGIS and QGIS for spatial analysis, mapping, and data visualization. When handling large-scale or repetitive datasets, I leverage Python to automate workflows, enhance data processing efficiency, and integrate advanced geospatial analysis techniques.</p>
-                    </div>
+            <!-- Climate Change Projects -->
+            <div class="carousel-section active" data-category="climate">
+                <div class="category-description">
+                    <h3>Climate Change</h3>
+                    <p>Projects focused on climate modeling, vulnerability assessment, and adaptation planning.</p>
+                </div>
+                <div class="carousel-container">
                     <div class="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/GIS1.jpg" alt="GIS Spatial Analysis" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Spatial pattern analysis for environmental impact assessment</p>
-                                </div>
+                                <img src="images/climate-project1.jpg" alt="Climate Project 1" class="carousel-img">
+                                <div class="carousel-caption">Sea level rise impact assessment for coastal communities in Java, Indonesia</div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/GIS2.jpg" alt="GIS Dashboard" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Interactive GIS dashboard for city planning</p>
-                                </div>
+                                <img src="images/climate-project2.jpg" alt="Climate Project 2" class="carousel-img">
+                                <div class="carousel-caption">Climate resilience mapping for agricultural regions in Southeast Asia</div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/climate-project3.jpg" alt="Climate Project 3" class="carousel-img">
+                                <div class="carousel-caption">Urban heat island analysis using satellite imagery and street-level sensors</div>
                             </div>
                         </div>
-                        <button class="carousel-control prev">&#10094;</button>
-                        <button class="carousel-control next">&#10095;</button>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
                     </div>
                 </div>
-                
-                <!-- Remote Sensing Carousel -->
-                <div class="carousel-section" id="remote-sensing-carousel">
-                    <div class="category-description">
-                        <h3>Remote Sensing</h3>
-                        <p>My remote sensing work focuses on satellite imagery analysis, spectral processing, and earth observation applications. I have utilized a range of technologies, including drones, LiDAR, and satellite imagery. The software I frequently use includes Agisoft, Pix4D, PCI Geomatics, Global Mapper, and Google Earth Engine. Specifically, I often integrate Google Earth Engine with Python for more detailed processing.</p>
-                    </div>
+            </div>
+            
+            <!-- Energy Transition Projects -->
+            <div class="carousel-section" data-category="energy">
+                <div class="category-description">
+                    <h3>Energy Transition</h3>
+                    <p>Projects focused on renewable energy potential assessment and mapping, as well as social equity considerations in energy transitions.</p>
+                </div>
+                <div class="carousel-container">
                     <div class="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/RS1.png" alt="Satellite Imagery Analysis" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Multi-temporal satellite imagery for land cover change detection</p>
-                                </div>
+                                <img src="images/energy-project1.jpg" alt="Energy Project 1" class="carousel-img">
+                                <div class="carousel-caption">Solar energy potential mapping for rural electrification in Indonesia</div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/RS2.png" alt="Spectral Analysis" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Spectral signature analysis for vegetation health monitoring</p>
-                                </div>
+                                <img src="images/energy-project2.jpg" alt="Energy Project 2" class="carousel-img">
+                                <div class="carousel-caption">Geospatial analysis of nickel mining impact on local communities in Sulawesi</div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/RS3.png" alt="LiDAR Processing" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>LiDAR point cloud processing for 3D terrain modeling</p>
-                                </div>
+                                <img src="images/energy-project3.jpg" alt="Energy Project 3" class="carousel-img">
+                                <div class="carousel-caption">Wind power feasibility study for coastal regions in Southeast Asia</div>
                             </div>
                         </div>
-                        <button class="carousel-control prev">&#10094;</button>
-                        <button class="carousel-control next">&#10095;</button>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
                     </div>
                 </div>
-                
-                <!-- Geodesy Carousel -->
-                <div class="carousel-section" id="geodesy-carousel">
-                    <div class="category-description">
-                        <h3>Geodesy</h3>
-                        <p>My expertise in geodesy spans a wide range of projects, including land surveying, GNSS acquisition and processing, drone and LiDAR acquisition, hydrographic surveying, and earth modeling. I'm a licensed Mine Surveyor (Ministry of Energy and Mineral Resources, Indonesia) with an IHO Category A Certification in hydrographic surveying. I work with tools like Trimble Business Center, Leica Geo Office, Agisoft, Pix4D, Hypack, BeamworX, and programming in MATLAB and Python for earth modeling applications.</p>
-                    </div>
+            </div>
+            
+            <!-- Natural Capital Projects -->
+            <div class="carousel-section" data-category="capital">
+                <div class="category-description">
+                    <h3>Natural Capital</h3>
+                    <p>Projects focused on ecosystem service valuation, biodiversity mapping, and sustainable resource management.</p>
+                </div>
+                <div class="carousel-container">
                     <div class="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/GEODESY1.jpg" alt="GNSS Network" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>GNSS network design for high-precision positioning</p>
-                                </div>
+                                <img src="images/capital-project1.jpg" alt="Natural Capital Project 1" class="carousel-img">
+                                <div class="carousel-caption">Participatory mapping of ecosystem services in Borneo rainforests</div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/GEODESY2.jpg" alt="Geoid Model" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Regional geoid model development for height system unification</p>
-                                </div>
+                                <img src="images/capital-project2.jpg" alt="Natural Capital Project 2" class="carousel-img">
+                                <div class="carousel-caption">Spatial modeling of carbon sequestration potential in mangrove ecosystems</div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/GEODESY3.jpg" alt="Deformation Monitoring" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Crustal deformation monitoring using integrated geodetic techniques</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/GEODESY4.jpg" alt="Geodesy Analysis" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Advanced geodetic analysis for infrastructure monitoring</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/GEODESY5.jpg" alt="Reference Frame" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Reference frame establishment for national mapping projects</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/GEODESY6.jpg" alt="Geodetic Network" class="carousel-img">
-                                <div class="carousel-caption">
-                                    <p>Geodetic network optimization for critical infrastructure</p>
-                                </div>
+                                <img src="images/capital-project3.jpg" alt="Natural Capital Project 3" class="carousel-img">
+                                <div class="carousel-caption">Remote sensing analysis of deforestation patterns and impacts on biodiversity</div>
                             </div>
                         </div>
-                        <button class="carousel-control prev">&#10094;</button>
-                        <button class="carousel-control next">&#10095;</button>
+                        <button class="carousel-control prev">&lt;</button>
+                        <button class="carousel-control next">&gt;</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -176,61 +141,53 @@
             navLinks.classList.toggle('active');
         });
         
-        // Portfolio Category Filtering and Carousel
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryBtns = document.querySelectorAll('.category-btn');
-            const carouselSections = document.querySelectorAll('.carousel-section');
-            
-            // Category switching
-            categoryBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    categoryBtns.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Hide all carousel sections
-                    carouselSections.forEach(section => {
+        // Portfolio category switching
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const carouselSections = document.querySelectorAll('.carousel-section');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Show selected category
+                const category = btn.getAttribute('data-category');
+                carouselSections.forEach(section => {
+                    if (section.getAttribute('data-category') === category) {
+                        section.classList.add('active');
+                    } else {
                         section.classList.remove('active');
-                    });
-                    
-                    // Show the selected carousel section
-                    const category = this.getAttribute('data-category');
-                    document.getElementById(category + '-carousel').classList.add('active');
+                    }
                 });
             });
+        });
+        
+        // Carousel functionality
+        const carousels = document.querySelectorAll('.carousel');
+        
+        carousels.forEach(carousel => {
+            const items = carousel.querySelectorAll('.carousel-item');
+            const prevBtn = carousel.querySelector('.prev');
+            const nextBtn = carousel.querySelector('.next');
+            let currentIndex = 0;
             
-            // Initialize all carousels
-            carouselSections.forEach(section => {
-                initCarousel(section);
+            // Show the first item initially
+            items[currentIndex].classList.add('active');
+            
+            // Previous button
+            prevBtn.addEventListener('click', () => {
+                items[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                items[currentIndex].classList.add('active');
             });
             
-            function initCarousel(carouselSection) {
-                const items = carouselSection.querySelectorAll('.carousel-item');
-                const prevBtn = carouselSection.querySelector('.prev');
-                const nextBtn = carouselSection.querySelector('.next');
-                let currentIndex = 0;
-                
-                // Show first slide
-                items[0].classList.add('active');
-                
-                // Previous button
-                prevBtn.addEventListener('click', () => {
-                    items[currentIndex].classList.remove('active');
-                    currentIndex = (currentIndex - 1 + items.length) % items.length;
-                    items[currentIndex].classList.add('active');
-                });
-                
-                // Next button
-                nextBtn.addEventListener('click', () => {
-                    items[currentIndex].classList.remove('active');
-                    currentIndex = (currentIndex + 1) % items.length;
-                    items[currentIndex].classList.add('active');
-                });
-            }
+            // Next button
+            nextBtn.addEventListener('click', () => {
+                items[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % items.length;
+                items[currentIndex].classList.add('active');
+            });
         });
     </script>
 </body>
