@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riska Aprilia Kuswati - Resources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">RISKA KUSWATI</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                </ul>
+                <div class="menu-toggle">&#9776;</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Resources Section -->
+    <section id="resources" class="active">
+        <div class="container">
+            <h1>Resources</h1>
+            <p class="section-intro">Access my GitHub repositories, research papers, and other resources related to geospatial research.</p>
+            
+            <!-- GitHub Repositories -->
+            <div class="resource-section">
+                <h2>GitHub Repositories</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>GeoClimate Analysis Tools</h3>
+                        <p>A collection of Python scripts for climate data analysis using GeoPandas and xarray.</p>
+                        <a href="https://github.com/yourusername/geoclimate-tools" class="resource-link" target="_blank">View Repository</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>Energy Transition Models</h3>
+                        <p>Computational models for simulating energy transitions in developing regions.</p>
+                        <a href="https://github.com/yourusername/energy-transition-models" class="resource-link" target="_blank">View Repository</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>Natural Capital Visualization</h3>
+                        <p>R and JavaScript tools for visualizing natural capital and ecosystem services data.</p>
+                        <a href="https://github.com/yourusername/natural-capital-viz" class="resource-link" target="_blank">View Repository</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Research Papers -->
+            <div class="resource-section">
+                <h2>Research Papers</h2>
+                <div class="resources-list">
+                    <div class="paper-item">
+                        <h3>Integrating geospatial data in climate adaptation strategies: A case study from Indonesia</h3>
+                        <p class="paper-meta">Journal of Climate Change Studies, 2024</p>
+                        <p class="paper-abstract">This paper explores the use of advanced geospatial techniques to develop climate adaptation strategies in coastal regions of Indonesia.</p>
+                        <a href="documents/paper1.pdf" class="resource-link" target="_blank">Download PDF</a>
+                    </div>
+                    
+                    <div class="paper-item">
+                        <h3>Geospatial analysis of renewable energy potential in Southeast Asian economies</h3>
+                        <p class="paper-meta">Renewable Energy Policy, 2023</p>
+                        <p class="paper-abstract">A comprehensive analysis of renewable energy potential across Southeast Asia using remote sensing and GIS techniques.</p>
+                        <a href="documents/paper2.pdf" class="resource-link" target="_blank">Download PDF</a>
+                    </div>
+                    
+                    <div class="paper-item">
+                        <h3>Valuing ecosystem services through participatory mapping: Methods and challenges</h3>
+                        <p class="paper-meta">Journal of Environmental Management, 2022</p>
+                        <p class="paper-abstract">This study presents innovative approaches to participatory GIS for ecosystem service valuation in diverse cultural contexts.</p>
+                        <a href="documents/paper3.pdf" class="resource-link" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Datasets -->
+            <div class="resource-section">
+                <h2>Datasets</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>Indonesian Coastal Risk Assessment</h3>
+                        <p>Spatial dataset of coastal vulnerability indicators across major Indonesian islands.</p>
+                        <a href="datasets/coastal-risk.zip" class="resource-link" target="_blank">Download Dataset</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>Renewable Energy Suitability Map</h3>
+                        <p>GIS layers showing suitability for solar, wind, and hydro power across Southeast Asia.</p>
+                        <a href="datasets/renewable-suitability.zip" class="resource-link" target="_blank">Download Dataset</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>Ecosystem Services Valuation</h3>
+                        <p>Spatial and tabular data from community-based ecosystem service valuation projects.</p>
+                        <a href="datasets/ecosystem-valuation.zip" class="resource-link" target="_blank">Download Dataset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <!-- Add your social media links here -->
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="Instagram">ig</a>
+                <a href="#" title="Twitter">tw</a>
+            </div>
+            <p>&copy; 2025 Riska Aprilia Kuswati. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
