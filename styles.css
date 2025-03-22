@@ -833,6 +833,50 @@ h2 {
     padding: 0;
 }
 
+/* Resource links container */
+.resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Resource links */
+.resource-link {
+    display: inline-block;
+    background-color: #0088cc;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.resource-link:hover {
+    background-color: #006699;
+}
+
+/* Secondary resource link */
+.resource-link.secondary {
+    background-color: #f5f5f5;
+    color: #0088cc;
+    border: 1px solid #0088cc;
+}
+
+.resource-link.secondary:hover {
+    background-color: #e0e0e0;
+    color: #0066aa;
+}
+
+/* Coming soon message */
+.coming-soon-message {
+    background-color: #f9f9f9;
+    border-left: 4px solid #0088cc;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: #555;
+}
+
 /* List layout for papers */
 .resources-list {
     display: flex;
@@ -864,22 +908,6 @@ h2 {
     margin-bottom: 1rem;
     line-height: 1.5;
     color: #555;
-}
-
-/* Resource links */
-.resource-link {
-    display: inline-block;
-    background-color: #0088cc;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.resource-link:hover {
-    background-color: #006699;
 }
 
 /* Footer */
@@ -975,5 +1003,15 @@ footer {
     .article-category {
         top: 20px;
         left: 20px;
+    }
+    
+    .resource-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .resource-link {
+        width: 100%;
+        text-align: center;
     }
 }
