@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riska Aprilia Kuswati - Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">RISKA KUSWATI</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                </ul>
+                <div class="menu-toggle">&#9776;</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h1>Research Blog</h1>
+            <p class="section-intro">Explore the latest insights from my research in climate change, energy transition, and natural capital.</p>
+            
+            <!-- Blog Categories -->
+            <div class="blog-categories">
+                <button class="category-btn active" data-category="all">All Categories</button>
+                <button class="category-btn" data-category="climate-change">Climate Change</button>
+                <button class="category-btn" data-category="energy-transition">Energy Transition</button>
+                <button class="category-btn" data-category="natural-capital">Natural Capital</button>
+            </div>
+            
+            <!-- Blog Posts -->
+            <div class="blog-grid">
+                <!-- Climate Change Category -->
+                <div class="blog-item" data-category="climate-change">
+                    <div class="blog-category">Climate Change</div>
+                    <div class="blog-img">
+                        <img src="images/jakarta_intervention_effects.png" alt="Jakarta Subsidence Study">
+                    </div>
+                    <h3>North Jakarta's Race Against Subsidence</h3>
+                    <p class="blog-excerpt">A critical analysis of land subsidence in North Jakarta and evidence-based interventions to address this urgent environmental challenge.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">March 22, 2025</span>
+                    </div>
+                    <a href="jakarta-subsidence.html" class="read-more">Read Full Article</a>
+                </div>
+                
+                <!-- Energy Transition Category (Placeholder) -->
+                <div class="blog-item coming-soon" data-category="energy-transition">
+                    <div class="blog-category">Energy Transition</div>
+                    <div class="blog-img placeholder">
+                        <img src="images/energytransition.jpg" alt="Energy Transition">
+                    </div>
+                    <h3>Renewable Energy Integration in Southeast Asia</h3>
+                    <p class="blog-excerpt">Coming soon: An analysis of geospatial factors influencing renewable energy adoption across Southeast Asian nations.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Coming Soon</span>
+                    </div>
+                    <span class="read-more disabled">Coming Soon</span>
+                </div>
+                
+                <!-- Natural Capital Category (Placeholder) -->
+                <div class="blog-item coming-soon" data-category="natural-capital">
+                    <div class="blog-category">Natural Capital</div>
+                    <div class="blog-img placeholder">
+                        <img src="images/naturalcapital.jpg" alt="Natural Capital">
+                    </div>
+                    <h3>Valuing Ecosystem Services in Urban Planning</h3>
+                    <p class="blog-excerpt">Coming soon: How GIS-based ecosystem service valuation can transform urban development decisions.</p>
+                    <div class="blog-meta">
+                        <span class="blog-date">Coming Soon</span>
+                    </div>
+                    <span class="read-more disabled">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <!-- Add your social media links here -->
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="Instagram">ig</a>
+                <a href="#" title="Twitter">tw</a>
+            </div>
+            <p>&copy; 2025 Riska Aprilia Kuswati. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Blog category filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const blogItems = document.querySelectorAll('.blog-item');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Get category value
+                const category = button.dataset.category;
+                
+                // Filter blog items
+                blogItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
