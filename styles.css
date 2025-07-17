@@ -910,6 +910,47 @@ h2 {
     color: #555;
 }
 
+/* Footnotes styling */
+.footnotes {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #0088cc;
+    border-radius: 4px;
+}
+
+.footnotes h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footnotes ol {
+    margin-left: 20px;
+}
+
+.footnotes li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.footnotes a {
+    color: #0088cc;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.footnotes a:hover {
+    text-decoration: underline;
+}
+
+/* Superscript styling for in-text citations */
+sup {
+    font-size: 0.75em;
+    color: #0088cc;
+}
+
 /* Footer */
 footer {
     background-color: #333;
